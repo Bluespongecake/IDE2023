@@ -16,62 +16,61 @@ RoBPin = 18
 RoSPin = 27
 
 def print_message():
-	print ("========================================")
-	print ("|            Rotary Encoder            |")
-	print ("|    ------------------------------    |")
-	print ("|        Pin A connect to GPIO17       |")
-	print ("|        Pin B connect to GPIO18       |")
-	print ("|     Button Pin connect to GPIO27     |")
-	print ("|                                      |")
-	print ("|         Use a Rotary Encoder         |")
-	print ("|     Rotary to add/minus counter      |")
-	print ("|      Press to set counter to 0       |")
-	print ("|                                      |")
-	print ("|                            SunFounder|")
-	print ("========================================\n")
-	print ("Program is running...")
-	print ("Please press Ctrl+C to end the program...")
-	raw_input ("Press Enter to begin\n")
+	print ("Rotary encoder read is running...")
 
 def setup():
+	# value to track position of scroll
 	global counter
+
+	# for tracking changes
 	global Last_RoB_Status, Current_RoB_Status
+	
+	# initialise pins
 	GPIO.setmode(GPIO.BCM)
 	GPIO.setup(RoAPin, GPIO.IN)
 	GPIO.setup(RoBPin, GPIO.IN)
 	GPIO.setup(RoSPin,GPIO.IN, pull_up_down=GPIO.PUD_UP)
-	# Set up a falling edge detect to callback clear
+	
+	# Set up a falling edge detect ISR to callback clear
 	GPIO.add_event_detect(RoSPin, GPIO.FALLING, callback=clear)
 
-	# Set up a counter as a global variable
 	counter = 0
 	Last_RoB_Status = 0
 	Current_RoB_Status = 0
 
-# Define a function to deal with rotary encoder
+# Function to deal with rotary encoder changes
 def rotaryDeal():
 	global counter
 	global Last_RoB_Status, Current_RoB_Status
 
 	flag = 0
 	Last_RoB_Status = GPIO.input(RoBPin)
+
 	# When RoAPin level changes
 	while(not GPIO.input(RoAPin)):
 		Current_RoB_Status = GPIO.input(RoBPin)
 		flag = 1
 	if flag == 1:
+
 		# Reset flag
 		flag = 0
+
+		# scroll up detected
 		if (Last_RoB_Status == 0) and (Current_RoB_Status == 1):
 			counter = counter + 1
+			print("UP")
+		
+		# scroll down detected
 		if (Last_RoB_Status == 1) and (Current_RoB_Status == 0):
 			counter = counter - 1
+			print("DOWN")
 		print ("counter = %d" % counter)
 
-# Define a callback function on switch, to clean "counter"
+# callback function to run when a button press is detected
 def clear(ev=None):
 	global counter
 	counter = 0
+	print("PRESS")
 
 def main():
 	print_message()
