@@ -1,0 +1,19 @@
+Ubiquiti is a networking firm producing software and hardware solutions under multiple brand names. It is known for it's broad-serving range of innovative networking and communication products used in commercial and residential spaces. 
+
+The company was founded in 2005 by Robert J. Pera, a wireless communications engineer at apple. Initially, the firm aimed to cater to a target market of small enterprises, with a focus on scalability, flexibility, manageability and overall ease of operation. As their product line grew, they produced flexible hardware solutions for a wide range of networking installations, which was appreciated by a wider range of customers, including larger enterprises and consumers. Ubiquiti (UI) has a market cap of $10.25 B (Jun 2023), and 1377 employees. 
+
+Ubiquiti has established a strong position in the market as a leading provider of networking and wireless communication solutions. The company is known for its innovative and cost-effective products that cater to a range of consumers. Their market position is characterised by a number of key factors:
+
+Cost-effective solutions:
+	Ubiquiti's product line is priced competitively in the networking solutions market compared to other enterprise-grade equipment. They offer a balance between affordability and performance which makes much of their products also suitable for domestic applications.
+
+Broad Product Portfolio
+	Ubiquiti has a diverse product portfolio that caters to various networking needs, including wireless access points, routers, switches, security cameras, and software-defined networking solutions. This means Ubiquiti caters to may different market segments and addresses a wide range of networking requirements.
+
+Disruptive Technology and Innovation
+	Ubiquiti has gained recognition for its disruptive technology and innovative approach to networking solutions. They have introduced competitively priced products that offer easy setup, intuitive operation, high-performance wireless connectivity, advanced network management features, and seamless integration with cloud services. This commitment to innovation has helped Ubiquiti differentiate itself in the market.
+
+Growing Presence in the Enterprise Market: 
+While initially catering to small businesses, Ubiquiti has been expanding its presence in the enterprise market. They have developed enterprise-grade products and solutions, offering features and capabilities required by larger organisations. This expansion has allowed Ubiquiti scale all the way up to compete with established networking vendors in the enterprise space.
+
+Overall, Ubiquiti is characterised by a cost-competitive, broad product portfolio, disruptive technology, and a focus on scalability and manageability.
