@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Device Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-left: 50px;
+            margin: 20px;
+            justify-content: space-between;     
+            background-color: #f2f2f2;
+            border-radius: 20px;
+            background: #e0e0e0;
+            box-shadow:  -5px 5px 10px #9d9d9d,
+                          5px -5px 10px #ffffff;
+
+        }
+        h1 {
+            font-size: 2em;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        dt {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        dd {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Device Information</h1>
+        <dl>
+            <dt>Device Name:</dt>
+            <dd id="deviceName">Loading...</dd>
+            <dt>Battery Level:</dt>
+            <dd id="batteryLevel">Loading...</dd>
+            <dt>Device Status:</dt>
+            <dd id="deviceStatus">Loading...</dd>
+            <dt>Alerts:</dt>
+            <dd id="alerts">Loading...</dd>
+        </dl>
+    </div>
+    <script>
+        const deviceNum = 0;
+
+        const devices = [
+          { name: "Kitchen", batteryLevel: 80, status: "good" ,alerts: "No Alerts"},
+          { name: "Living Room", batteryLevel: 50, status: "bad", alerts: "CO Warning!" },
+          { name: "Garage", batteryLevel: 20, status: "check", alerts: "Low Battery!" },
+          { name: "Office", batteryLevel: 100, status: "good", alerts: "No Alerts" },
+        ];
+
+        // Replace these with actual data fetching functions
+        setTimeout(function() {
+            document.getElementById('deviceName').innerText = devices[deviceNum].name;
+            document.getElementById('batteryLevel').innerText = devices[deviceNum].batteryLevel
+                + " %";
+            document.getElementById('deviceStatus').innerText = devices[deviceNum].status;
+            document.getElementById('alerts').innerText = devices[deviceNum].alerts;
+        }, 2000);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+const devices = [
+  { name: "Kitchen", batteryLevel: 80, status: "good" ,alerts: "No Alerts"},
+  { name: "Living Room", batteryLevel: 50, status: "bad", alerts: "CO Warning!" },
+  { name: "Garage", batteryLevel: 20, status: "check", alerts: "Low Battery!" },
+  { name: "Office", batteryLevel: 100, status: "good", alerts: "No Alerts" },
+];

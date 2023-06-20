@@ -1,0 +1,142 @@
+/*
+ body {
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      height: 100vh;
+      width: 100vw;
+      background-color: #f1f1f1;
+    }
+.line {
+     width: 30%;
+     height: 20%;
+     border-radius: 50px;
+     background: linear-gradient(225deg, #f0f0f0, #cacaca);
+     box-shadow:  -20px 20px 60px #bebebe,
+                  20px -20px 60px #ffffff;
+}
+*/
+:root
+{
+     --battery_w: 70px;
+     --battery_h: 20px;
+     --selectednum: 2;
+}
+body {
+     font-family: Arial, sans-serif;
+     margin: 20px;
+     background-color: #e0e0e0;
+}
+
+h1 {
+     text-align: center;
+}
+
+ul {
+     list-style-type: none;
+     padding: 0;
+}
+
+li {
+     padding: 20px;
+     margin: 20px;
+     justify-content: space-between;     
+     background-color: #f2f2f2;
+     border-radius: 20px;
+     background: #e0e0e0;
+     box-shadow:  -5px 5px 10px #9d9d9d,
+                  5px -5px 10px #ffffff;
+}
+.highlight {
+     background-color: #C7D5E3;
+}
+.device-name {
+     font-weight: bold;
+     display: inline-block;
+     width: 30%;
+}
+
+.alerts {
+     font-weight: lighter;
+     display: inline-block;
+     width: 30%;
+     font-size: 14px;
+
+}
+.agood {
+     color: #89888D;
+}
+.acheck {
+     color: #000;
+}
+.abad {
+     font-weight: bold;
+}
+
+.status {
+     font-weight: light;
+     font-size: 10px;
+     background-color: red;
+     display: inline-block;
+     width: 20px;
+     height: 20px;
+     border-radius: 10px;
+     padding-top: -10px;
+
+}
+.good {
+     background-color: #30D158;
+}
+.check {
+     background-color: #FF9500;
+}
+.bad {
+     background-color: #FF3B30;
+}
+.noStatus {
+     background-color: #fff;
+}
+
+.battery-level {
+
+     float: right;
+     text-align: center;
+     display: inline-block;
+     padding: 5px;
+     border-radius: 5px;
+     color: #fff;
+     padding-left: 5%;
+     margin-top: -7px;
+
+     width: var(--battery_w);
+     height: var(--battery_h);
+     background-color: none;
+     
+     background-size: fill;
+     background-repeat: no-repeat;
+     background-position: center;
+
+}
+
+.battery-full {
+
+     background-image: url(assets/batteryFull.svg);
+
+}
+
+.battery-high {
+
+     background-image: url(assets/batteryhigh.svg);
+
+}
+
+.battery-medium {
+     background-image: url(assets/batterymid.svg);
+}
+
+.battery-low {
+     background-image: url(assets/batterylow.svg);
+}
+.noBattery {
+     background-image: url(assets/batteryFull.svg);
+}

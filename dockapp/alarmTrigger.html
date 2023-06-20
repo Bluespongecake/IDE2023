@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      margin: 20px;
+      background-color: #ff4013;
+      border-radius: 50px;
+      background: #e32400;
+      box-shadow:  -5px 5px 10px #9f1900,
+                   5px -5px 10px #ff2f00;
+      animation: blinkingBackground 2s infinite;
+    }
+    @keyframes blinkingBackground{
+      0%    { 
+        background: #e32400;
+        box-shadow:  -5px 5px 10px #9f1900,
+                     5px -5px 10px #ff2f00;
+                  }
+      75%   { 
+        background: #e0e0e0;
+        box-shadow:  -5px 5px 10px #9d9d9d,
+                     5px -5px 10px #ffffff;
+      }
+      100%  { 
+        background: #e32400;
+        box-shadow:  -5px 5px 10px #9f1900,
+                     5px -5px 10px #ff2f00;
+      }
+    }
+
+    h1 {
+      color: black;
+    }
+
+    #alarm {
+      border-radius: 50px;
+      padding: 10px;
+      border: 1px solid #000;
+      display: inline-block;
+      cursor: pointer;
+
+    }
+  </style>
+  <script src="your-script.js"></script>
+</head>
+<body>
+  <h1>Fire detected in: Kitchen</h1>
+  <p>Press knob to stop alarm</p>
+  <div id="alarm" onclick="stopAlarm()">Press</div>
+
+  <script>
+    function stopAlarm() {
+      var alarmElement = document.getElementById('alarm');
+      alarmElement.innerHTML = 'Alarm stopped!';
+      alarmElement.style.backgroundColor = 'green';
+      alarmElement.style.cursor = 'default';
+      alarmElement.onclick = null;
+      self.location="index.html";
+
+    }
+  </script>
+</body>
+</html>
