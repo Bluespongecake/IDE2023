@@ -3,7 +3,7 @@ const devices = [
   { name: "Kitchen", batteryLevel: 80, status: "good" ,alerts: "No Alerts"},
   { name: "Living Room", batteryLevel: 50, status: "bad", alerts: "CO Warning!" },
   { name: "Garage", batteryLevel: 20, status: "check", alerts: "Low Battery!" },
-  { name: "Office", batteryLevel: 100, status: "good", alerts: "No Alerts" },
+  { name: "Office", batteryLevel: 0, status: "bad", alerts: "No Connection" },
 ];
 
 // Function to generate the battery level class based on the battery percentage
@@ -91,6 +91,8 @@ function updateScroll(indexToHighlight) {
 
 // Call the function to populate the device list on page load
 populateDeviceList();
+
+
 
 for (var i = 0; i < 8; i++) {
   updateScroll(i);

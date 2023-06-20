@@ -5,20 +5,24 @@ const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
 const createWindow = () => {
-  // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }
-  })
+	// Create the browser window.
+	const mainWindow = new BrowserWindow({
+    	width: 800,
+    	height: 600,
+    	webPreferences: {
+    	preload: path.join(__dirname, 'preload.js')
+    	}
+	})
+	var python = require('child_process').spawn('python', ['./testPy.py']);
+    python.stdout.on('data',function(data){
+        console.log("data: ",data.toString('utf8'));
+    });
 
-  // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+	// and load the index.html of the app.
+	mainWindow.loadFile('index.html')
 
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+	// Open the DevTools.
+	// mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
