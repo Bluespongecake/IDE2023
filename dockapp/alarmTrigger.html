@@ -1,69 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      max-width: 85vw;
-      margin: 0 auto;
-      padding: 20px;
-      margin: 20px;
-      background-color: #ff4013;
-      border-radius: 50px;
-      background: #e32400;
-      box-shadow:  -5px 5px 10px #9f1900,
-                   5px -5px 10px #ff2f00;
-      animation: blinkingBackground 2s infinite;
-    }
-    @keyframes blinkingBackground{
-      0%    { 
-        background: #e32400;
-        box-shadow:  -5px 5px 10px #9f1900,
-                     5px -5px 10px #ff2f00;
-                  }
-      75%   { 
-        background: #e0e0e0;
-        box-shadow:  -5px 5px 10px #9d9d9d,
-                     5px -5px 10px #ffffff;
-      }
-      100%  { 
-        background: #e32400;
-        box-shadow:  -5px 5px 10px #9f1900,
-                     5px -5px 10px #ff2f00;
-      }
-    }
+    <title>Device Information</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          max-width: 85vw;
+          margin: 0 auto;
+          padding: 20px;
+          margin: 20px;
+          background-color: #ff4013;
+          border-radius: 50px;
+          background: #e32400;
+          box-shadow:  -5px 5px 10px #9f1900,
+                       5px -5px 10px #ff2f00;
+          animation: blinkingBackground 2s infinite;
+        }
+        @keyframes blinkingBackground{
+          0%    { 
+            background: #e32400;
+            box-shadow:  -5px 5px 10px #9f1900,
+                         5px -5px 10px #ff2f00;
+                      }
+          75%   { 
+            background: #e0e0e0;
+            box-shadow:  -5px 5px 10px #9d9d9d,
+                         5px -5px 10px #ffffff;
+          }
+          100%  { 
+            background: #e32400;
+            box-shadow:  -5px 5px 10px #9f1900,
+                         5px -5px 10px #ff2f00;
+          }
+        }
 
-    h1 {
-      color: black;
-    }
+        h1 {
+          color: black;
+        }
 
-    #alarm {
-      border-radius: 50px;
-      padding: 10px;
-      border: 1px solid #000;
-      display: inline-block;
-      cursor: pointer;
-    }
+        #alarm {
+          border-radius: 50px;
+          padding: 10px;
+          border: 1px solid #000;
+          display: inline-block;
+          cursor: pointer;
+        }
 
-  </style>
-  <script src="your-script.js"></script>
+    </style>
 </head>
 <body>
-  <h1>Fire detected in: Kitchen</h1>
-  <p>Press knob to stop alarm</p>
-  <div id="alarm" onclick="stopAlarm()">Press</div>
+    <div class="container">
+        <h1>Fire Detected in Kitchen</h1>
+        <p>If this is a false alarm you can silence it</p>
+        <div id="alarm">Press Knob to Stop</div>
 
-  <script>
-    function stopAlarm() {
-      var alarmElement = document.getElementById('alarm');
-      alarmElement.innerHTML = 'Alarm stopped!';
-      alarmElement.style.backgroundColor = 'green';
-      alarmElement.style.cursor = 'default';
-      alarmElement.onclick = null;
-      self.location="index.html";
+    <script>
+        const deviceNum = 0;
 
-    }
-  </script>
+        const devices = [
+          { name: "Kitchen", batteryLevel: 80, status: "good" ,alerts: "No Alerts"},
+          { name: "Living Room", batteryLevel: 50, status: "bad", alerts: "CO Warning!" },
+          { name: "Garage", batteryLevel: 20, status: "check", alerts: "Low Battery!" },
+          { name: "Office", batteryLevel: 100, status: "good", alerts: "No Alerts" },
+        ];
+
+        // Replace with actual data fetching functions
+        setTimeout(function() {
+            document.getElementById('deviceName').innerText = devices[deviceNum].name;
+            document.getElementById('batteryLevel').innerText = devices[deviceNum].batteryLevel
+                + " %";
+            document.getElementById('deviceStatus').innerText = devices[deviceNum].status;
+            document.getElementById('alerts').innerText = devices[deviceNum].alerts;
+        }, 2000);
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                self.location="index.html";
+            }
+            if (event.key === "a") {
+            self.location="alarmTrigger.html";
+            }
+        });
+
+    </script>
 </body>
 </html>

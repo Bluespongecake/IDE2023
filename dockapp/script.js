@@ -92,11 +92,29 @@ function updateScroll(indexToHighlight) {
 // Call the function to populate the device list on page load
 populateDeviceList();
 
+//set scroll progress to 0
+updateScroll(0);
 
+var currScroll = 0;
+var x = document.getElementsByTagName("BODY")[0];
 
-for (var i = 0; i < 8; i++) {
-  updateScroll(i);
-}
+document.addEventListener("keydown", function(event) {
+  if (event.key === "ArrowDown") {
+    currScroll += 1;
+    updateScroll(currScroll);
+  }
+  if (event.key === "ArrowUp") {
+    currScroll -= 1;
+    updateScroll(currScroll);
+  }
+  if (event.key === "Enter") {
+    self.location="devices.html";
+  }
+  if (event.key === "a") {
+    self.location="alarmTrigger.html";
+  }
+});
+
 
 // setTimeout(function() {
 //   window.location.reload();
